@@ -1,16 +1,16 @@
 @{
   Layout = "_Layout";
 }
-<div class="jumbotron">
-  <div class="text-center">
-<img src="https://media.giphy.com/media/12rnHymfk0ilRC/giphy.gif" alt="Responsive image">
-<br>
-</div>
-
+<h1>To Do List</h1>
+<hr />
 <h2>Edit Item: @Model.GetDescription()</h2>
-<form action="/items/@Model.GetId()/update" method="post">
-  <label for="newname">Name:</label>
-  <input type="text" name="newname" value="@Model.GetDescription()">
-  <button type="submit">Edit</button>
+<form action="/categories/@Model.GetId()/items" method="post">
+  <div class="form-group">
+    <label for="newname">Description</label>
+    <input type="text" id="newname" name="newname" value="@Model.GetDescription()" class="form-control">
+    <input type="date" id="newdate" name="newdate" value="@Model.GetRawDate()" class="form-control">
+  </div>
+
+  <button type="submit" class="button">Edit</button>
 </form>
 <h4><a href="/">Return Home</a><h4>

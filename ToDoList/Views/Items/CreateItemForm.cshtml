@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+<h1>To Do List</h1>
+<h3>Add A New Item to @Model.GetName()</h3>
+<form action="/categories/@Model.GetId()/items" method="post">
+  <div class="form-group">
+    <label for="new-item">Item Description</label>
+    <input type="text" id="new-item" name="new-item" class="form-control">
+    <input type="date" id="new-date" name="new-date" class="form-control">
+  </div>
+  <button type="submit" class="button" name="button">Add Item</button>
+</form>
